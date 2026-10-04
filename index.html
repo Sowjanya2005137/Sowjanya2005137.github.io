@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sowjanya Gadibilli | Aspiring Software Developer</title>
+<meta name="description" content="Portfolio of Sowjanya Gadibilli, a Computer Science Engineering student skilled in Java, Python, SQL and responsive web development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F7FB; --card:#FFFFFF; --ink:#0F1730; --muted:#5A6580; --line:#E3E7F1;
+  --brand:#5B5BF0; --brand2:#12B5A6; --chip:#EEF0FF; --chip-ink:#3B3BC4;
+  --hero1:#1B1F5E; --hero2:#0E6E7A; --shadow:0 10px 30px rgba(20,30,80,.08);
+  --font:"Plus Jakarta Sans","Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0B1020; --card:#141B33; --ink:#EDF0FA; --muted:#A2ACC6; --line:#25304F;
+    --brand:#8B8BFF; --brand2:#3FD8C8; --chip:#1F2850; --chip-ink:#B9BBFF;
+    --hero1:#161A52; --hero2:#0B5560; --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:1.02rem;line-height:1.7;
+  padding-bottom:env(safe-area-inset-bottom,0px)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brand2);outline-offset:3px;border-radius:6px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* top bar */
+.bar{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px);
+  background:rgba(14,18,60,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:3.5rem}
+.logo{display:grid;place-items:center;width:2.2rem;height:2.2rem;border-radius:50%;background:#fff;color:#1B1F5E;
+  font-weight:800;font-size:.85rem;text-decoration:none}
+.bar nav{display:flex;gap:1.1rem;overflow-x:auto;white-space:nowrap}
+.bar nav a{color:#DDE3FF;text-decoration:none;font-weight:600;font-size:.92rem}
+.bar nav a:hover{color:#fff}
+
+/* hero */
+.hero{background:radial-gradient(900px 400px at 85% 10%,rgba(18,181,166,.45),transparent 60%),
+  linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;
+  padding:calc(7rem + env(safe-area-inset-top,0px)) 0 5rem}
+.hero .wrap{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.5fr 1fr}}
+.hello{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+  padding:.35rem .9rem;border-radius:999px;font-weight:600;font-size:.9rem;margin-bottom:1.1rem}
+.hero h1{font-size:clamp(2.5rem,8.5vw,4.6rem);line-height:1.04;letter-spacing:-.035em;margin:0 0 1rem;font-weight:800}
+.hero .role{font-size:clamp(1.05rem,2.8vw,1.35rem);font-weight:500;color:#D5DCFF;margin:0 0 1rem}
+.hero .lead{max-width:34rem;color:#E8ECFF;margin:0 0 2rem}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.8rem 1.35rem;border-radius:.8rem;
+  border:2px solid rgba(255,255,255,.55);color:#fff;transition:background .2s,color .2s,transform .2s}
+.btn:hover{background:#fff;color:#1B1F5E}
+.btn.solid{background:#fff;color:#1B1F5E;border-color:#fff}
+.btn.solid:hover{transform:translateY(-2px)}
+
+/* profile card in hero */
+.badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:1.4rem;padding:1.6rem;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.avatar{display:grid;place-items:center;width:5.2rem;height:5.2rem;border-radius:1.4rem;
+  background:linear-gradient(135deg,#8B8BFF,#3FD8C8);color:#0F1730;font-weight:800;font-size:1.9rem;margin-bottom:1rem}
+.badge dl{margin:0;display:grid;gap:.7rem}
+.badge dt{font-size:.78rem;color:#C2CBFF;font-weight:600}
+.badge dd{margin:0;font-weight:700}
+
+/* sections */
+section{padding:4.2rem 0 .5rem}
+h2{font-size:clamp(1.7rem,5vw,2.3rem);letter-spacing:-.025em;margin:0 0 .4rem;font-weight:800}
+.sub{color:var(--muted);margin:0 0 2rem;max-width:36rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:1.2rem;box-shadow:var(--shadow)}
+
+/* about */
+.about{display:grid;gap:1.5rem}
+@media(min-width:820px){.about{grid-template-columns:1.3fr 1fr}}
+.about .card{padding:1.6rem}
+.about h3{margin:0 0 .8rem;font-size:1.1rem}
+.edu{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.edu li{padding-left:1rem;border-left:3px solid var(--brand2)}
+.edu b{display:block}
+.edu span{color:var(--muted);font-size:.93rem}
+
+/* projects */
+.projects{display:grid;gap:1.5rem}
+@media(min-width:900px){.projects{grid-template-columns:repeat(3,1fr)}}
+.proj{display:flex;flex-direction:column;overflow:hidden;transition:transform .2s}
+.proj:hover{transform:translateY(-4px)}
+.proj .top{padding:1.3rem 1.4rem;color:#fff}
+.p1 .top{background:linear-gradient(135deg,#4F46E5,#7C73FF)}
+.p2 .top{background:linear-gradient(135deg,#0E6E7A,#12B5A6)}
+.p3 .top{background:linear-gradient(135deg,#C2410C,#F59E0B)}
+.proj .top small{display:block;font-weight:600;opacity:.9}
+.proj .top h3{margin:.2rem 0 0;font-size:1.25rem;line-height:1.25}
+.proj .in{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;flex:1}
+.proj ul{margin:0 0 1rem;padding-left:1.1rem;color:var(--muted);font-size:.97rem}
+.proj li{margin-bottom:.45rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;margin-bottom:1rem;list-style:none;padding:0}
+.tags li{background:var(--chip);color:var(--chip-ink);font-weight:600;font-size:.8rem;padding:.2rem .65rem;border-radius:999px}
+.proj a.repo{font-weight:700;color:var(--brand);text-decoration:none}
+.proj a.repo:hover{text-decoration:underline}
+
+/* skills */
+.skills{display:grid;gap:1.2rem}
+@media(min-width:700px){.skills{grid-template-columns:1fr 1fr}}
+.skills .card{padding:1.4rem}
+.skills h3{margin:0 0 .8rem;font-size:1.02rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;list-style:none;margin:0;padding:0}
+.chips li{background:var(--chip);color:var(--chip-ink);font-weight:600;font-size:.88rem;padding:.3rem .8rem;border-radius:999px}
+
+/* certs */
+.certs{display:grid;gap:1rem}
+@media(min-width:700px){.certs{grid-template-columns:repeat(3,1fr)}}
+.cert{padding:1.2rem 1.3rem}
+.cert small{display:block;color:var(--brand);font-weight:700;font-size:.82rem}
+.cert b{display:block;margin-top:.15rem}
+.win{margin-top:1.5rem;padding:1.4rem 1.6rem;border-radius:1.2rem;color:#fff;
+  background:linear-gradient(135deg,var(--hero1),var(--hero2));box-shadow:var(--shadow)}
+.win b{display:block;font-size:1.15rem;margin-bottom:.3rem}
+
+/* contact */
+.contact{margin:4.2rem 0 0;padding:4rem 0 calc(3rem + env(safe-area-inset-bottom,0px));
+  background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;text-align:center}
+.contact h2{color:#fff}
+.contact p{color:#DDE3FF;max-width:30rem;margin:0 auto 1.8rem}
+.contact .btns{justify-content:center}
+.mail{display:block;font-size:clamp(1.1rem,4.6vw,1.8rem);font-weight:800;margin-bottom:1.6rem;word-break:break-word;text-decoration:none}
+.contact small{display:block;margin-top:2rem;color:#B6C0F2}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Back to top">SG</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="hello">Open to entry-level roles</span>
+        <h1>Sowjanya Gadibilli</h1>
+        <p class="role">Aspiring Software Developer &middot; Computer Science Engineering Student</p>
+        <p class="lead">I build responsive, user-focused software with Java, Python, SQL and the web stack.</p>
+        <div class="btns">
+          <a class="btn solid" href="#projects">View my projects</a>
+          <a class="btn" href="https://github.com/Sowjanya2005137" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://linkedin.com/in/sowjanya-gadibilli" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <aside class="badge" aria-label="Quick facts">
+        <div class="avatar" aria-hidden="true">SG</div>
+        <dl>
+          <div><dt>Studying</dt><dd>B.Tech CSE, 3rd year</dd></div>
+          <div><dt>College</dt><dd>Lendi Institute of Engineering and Technology</dd></div>
+          <div><dt>Languages</dt><dd>Telugu, Hindi, English</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section id="about">
+      <h2>About me</h2>
+      <p class="sub">A student developer who likes turning real problems into simple, clear interfaces.</p>
+      <div class="about">
+        <div class="card">
+          <h3>Who I am</h3>
+          <p>I am a third-year Computer Science and Engineering student with a strong foundation in Java, Python, SQL and web development. I have built responsive user interfaces and full-stack features through team and individual projects, from a real-time hospital queue app to a trip planner that uses Google Maps.</p>
+          <p>I want to bring technical skills, fresh ideas and a strong work ethic to a growth-driven team while building a long-term career in software development.</p>
+        </div>
+        <div class="card">
+          <h3>Education</h3>
+          <ul class="edu">
+            <li><b>B.Tech, Computer Science and Engineering</b><span>Lendi Institute of Engineering and Technology (3rd year)</span></li>
+            <li><b>Intermediate (MPC)</b><span>Narayana Junior College</span></li>
+            <li><b>Secondary School Certificate (SSC)</b><span>Viswa Bharathi Vidya Kendram</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="sub">Team and individual work, each built to solve a clear user problem.</p>
+      <div class="projects">
+
+        <article class="card proj p1">
+          <div class="top"><small>Team of 6 &middot; about 6 weeks</small><h3>Hospital Queue Management System</h3></div>
+          <div class="in">
+            <ul>
+              <li>Built the front-end for 3 core screens so patients can check live queue status from their phones instead of waiting in the hospital.</li>
+              <li>Designed the interface for automatic SMS alerts as the queue reduces.</li>
+              <li>Delivered 3 responsive UI screens within a 6-week cycle.</li>
+            </ul>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>Responsive UI</li></ul>
+            <!-- Replace with the real repo link -->
+            <a class="repo" href="https://github.com/Sowjanya2005137" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="card proj p2">
+          <div class="top"><small>Team of 5 &middot; about 6 weeks</small><h3>Crypto Guard</h3></div>
+          <div class="in">
+            <ul>
+              <li>Built the front-end for 3 screens of a crypto wallet security application.</li>
+              <li>Designed a dual-PIN system: a normal PIN and a duress PIN that shows a fake balance under coercion to protect user funds.</li>
+              <li>Built and demonstrated a coercion-resistant security flow.</li>
+            </ul>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>UI Design</li></ul>
+            <!-- Replace with the real repo link -->
+            <a class="repo" href="https://github.com/Sowjanya2005137" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="card proj p3">
+          <div class="top"><small>Tested across 20+ trips</small><h3>TravelMate: trip planning and budget app</h3></div>
+          <div class="in">
+            <ul>
+              <li>Developed a trip planning and budget management app with location-based features using Google Maps APIs.</li>
+              <li>Implemented expense tracking and storage of trip details, photographs and memories.</li>
+              <li>Tested across 20+ trips to confirm accurate tracking and reliable storage.</li>
+            </ul>
+            <ul class="tags"><li>Python</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Google Maps API</li></ul>
+            <!-- Replace with the real repo link -->
+            <a class="repo" href="https://github.com/Sowjanya2005137" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <p class="sub">The tools and fundamentals I use to build and ship.</p>
+      <div class="skills">
+        <div class="card"><h3>Programming languages</h3><ul class="chips"><li>Java</li><li>C</li><li>Python</li><li>SQL</li><li>JavaScript</li></ul></div>
+        <div class="card"><h3>Web development</h3><ul class="chips"><li>HTML</li><li>CSS</li><li>Responsive UI design</li><li>Google Maps API</li></ul></div>
+        <div class="card"><h3>Core concepts</h3><ul class="chips"><li>Data structures and algorithms</li><li>Database management</li></ul></div>
+        <div class="card"><h3>Tools</h3><ul class="chips"><li>Git</li><li>GitHub</li></ul></div>
+        <div class="card"><h3>Working style</h3><ul class="chips"><li>Problem-solving</li><li>Teamwork and collaboration</li><li>Communication</li><li>Time management</li></ul></div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications and achievements</h2>
+      <p class="sub">Extra learning beyond the classroom.</p>
+      <div class="certs">
+        <div class="card cert"><small>NPTEL</small><b>Quantum Computing</b></div>
+        <div class="card cert"><small>NPTEL</small><b>Internet of Things</b></div>
+        <div class="card cert"><small>MongoDB</small><b>Core Concepts and Architecture</b></div>
+        <div class="card cert"><small>Palo Alto Networks</small><b>Cybersecurity</b></div>
+        <div class="card cert"><small>Juniper Networks</small><b>Networking</b></div>
+      </div>
+      <div class="win">
+        <b>Smart India Hackathon (SIH) 2026</b>
+        Advanced to the 3rd round at the college level, competing among 20 to 50 teams.
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's work together</h2>
+    <p>I am looking for an entry-level Software Developer role or internship. Send me a message.</p>
+    <a class="mail" href="mailto:sowjanyagadibilli@gmail.com">sowjanyagadibilli@gmail.com</a>
+    <div class="btns">
+      <a class="btn solid" href="https://linkedin.com/in/sowjanya-gadibilli" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Sowjanya2005137" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <small>&copy; Sowjanya Gadibilli</small>
+  </div>
+</footer>
+
+</body>
+</html>
